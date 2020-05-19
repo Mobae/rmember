@@ -21,7 +21,7 @@ app.use("/sort", require("./routes/sort.js"));
 app.use("/tag", require("./routes/tags.js"));
 app.use("/login", require("./routes/auth.js"));
 
-const PORT = process.env.PORT || 5000;
+const PORT = process.env.PORT || 8000;
 
 app.listen(PORT, () => {
   console.log(`Console running on port ${PORT}`);
