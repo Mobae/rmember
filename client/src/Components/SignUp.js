@@ -1,5 +1,5 @@
 import React from "react";
-import { Form, Col, Row, FormGroup } from "react-bootstrap";
+import { Form, Col, Row, FormGroup, Button } from "react-bootstrap";
 const SignUp = () => {
   return (
     <Form>
@@ -32,6 +32,9 @@ const SignUp = () => {
           </Col>
         </Row>
       </FormGroup>
+      <Button id="sign-up-button" variant="success">
+        Sign Up
+      </Button>
     </Form>
   );
 };
