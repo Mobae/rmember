@@ -3,6 +3,7 @@ const router = express.Router();
 const auth = require('../middleware/auth.js');
 
 const Todo = require('../models/Todo.js');
+const Tag  = require('../models/Tag.js');
 
 
 
@@ -18,6 +19,15 @@ router.post(
             const desc = req.body.desc;
             const priority = req.body.priority;
             const tags = req.body.tags;
+
+            for(let i=0; i<tags.length; i++){
+                const tag_name = tags[i].name;
+                let tag = await Tag.find({name: tag_name})
+                tag = tag[0];
+                if(!tag){
+                    const new_tag = await Tag.create({user: req.user, name: tag_name});   // Creating a tag if it does not exists
+                }
+            }
 
             const payload = {
                 user: req.body.user,

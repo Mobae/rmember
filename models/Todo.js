@@ -18,7 +18,7 @@ const TodoSchema = new mongoose.Schema({
     tags: [
         {
             name: {
-                type: Schema.Types.ObjectId
+                type: String
             }
         }
     ],
