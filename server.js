@@ -8,7 +8,6 @@ const multer = require("multer");
 const upload = multer({ dest: "uploads/" });
 const connectDB = require("./config/db.js");
 const Profile = require("./models/Profile.js");
-// PLC at home using Arduino and CODESYS-Automation Control lab
 // Connect to DB
 connectDB();
 
