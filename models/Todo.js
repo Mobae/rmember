@@ -22,6 +22,9 @@ const TodoSchema = new mongoose.Schema({
             }
         }
     ],
+    list: {
+        type: String
+    },
     date: {
         type: Date,
         default: Date.now

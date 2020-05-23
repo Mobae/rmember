@@ -4,6 +4,7 @@ const auth = require('../middleware/auth.js');
 
 const Todo = require('../models/Todo.js');
 const Tag = require('../models/Tag.js');
+const List = require('../models/List.js');
 
 // @ROUTE GET /sort/tag/:tag_name
 router.get(
@@ -42,5 +43,34 @@ router.get(
     }
 )
 
+
+// @Route GET /sort/list/:list_name
+
+router.get(
+    '/list/:list_name',
+    auth,
+    async (req, res) => {
+        const user = req.user;
+        const list_name = req.params.list_name;
+        const list = await List.find({name: list_name, user: req.user});
+
+
+        if(list) {
+            const todo = await Todo.find({user: req.user._id, list : req.params.list_name });
+            console.log(todo);
+            res.status(200).json({
+                success: true,
+                count: todo.length,
+                data: todo
+            });
+
+        } else {
+            res.status(404).json({
+                success: false,
+                data: {"error" : "No List Found !!" }
+            });
+        }
+    }
+)
 
 module.exports = router;
