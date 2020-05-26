@@ -1,5 +1,7 @@
 import React, { useState } from "react";
 import { Form, Col, Row, FormGroup, Button } from "react-bootstrap";
+import axios from "axios";
+
 const SignUp = () => {
   const [formData, setFormData] = useState({
     firstName: "",
@@ -14,6 +16,7 @@ const SignUp = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     console.log(formData);
+    axios.post("http://localhost:5000/auth", formData);
   };
   return (
     <Form onSubmit={(e) => handleSubmit(e)}>
@@ -22,23 +25,36 @@ const SignUp = () => {
         <Row>
           <Col>
             <Form.Label>First Name</Form.Label>
-            <Form.Control name="firstName" onChange={(e) => handleChange(e)} />
+            <Form.Control
+              name="firstName"
+              onChange={(e) => handleChange(e)}
+              required={true}
+            />
           </Col>
           <Col>
             <Form.Label>Last Name</Form.Label>
-            <Form.Control name="lastName" onChange={(e) => handleChange(e)} />
+            <Form.Control
+              name="lastName"
+              onChange={(e) => handleChange(e)}
+              required={true}
+            />
           </Col>
         </Row>
       </FormGroup>
       <FormGroup>
         <Form.Label>Email</Form.Label>
-        <Form.Control name="email" onChange={(e) => handleChange(e)} />
+        <Form.Control
+          name="email"
+          onChange={(e) => handleChange(e)}
+          required={true}
+        />
       </FormGroup>
       <FormGroup>
         <Row>
           <Col>
             <Form.Label type="password">Password</Form.Label>
             <Form.Control
+              required={true}
               type="password"
               name="password"
               onChange={(e) => handleChange(e)}
@@ -47,6 +63,7 @@ const SignUp = () => {
           <Col>
             <Form.Label>Confirm password</Form.Label>
             <Form.Control
+              required={true}
               type="password"
               name="passwordC"
               onChange={(e) => handleChange(e)}

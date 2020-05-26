@@ -11,7 +11,7 @@ const IntroSection = () => {
           <div style={{ display: "flex", flexDirection: "row" }}>
             <div>
               <h1>Rmember</h1>
-              <h3>Task Management Simplified</h3>
+              <h4>Task Management Simplified</h4>
               <p>
                 Then some Deatils for our app. Rmember's boards, lists, and
                 cards enable you to organize and prioritize your projects in a
