@@ -35,7 +35,6 @@ const IntroSection = () => {
             <Link to="/signup">Sign Up For Free</Link>
           </Button>
         </div>
-        <div className="image"></div>
       </div>
       <br />
       {/* Will insert an image after every p tag  */}
@@ -50,6 +49,13 @@ const IntroSection = () => {
             adipisci repellat tempore vel quo esse, ad cum, aliquam ea. Quidem,
             temporibus?
           </p>
+          <div>
+            <img
+              src={Batman}
+              alt=""
+              style={{ height: "10rem", width: "10rem" }}
+            />
+          </div>
           <Button id="sign-up-button" variant="success">
             <Link to="/signup">Never Forget Again</Link>
           </Button>
