@@ -15,7 +15,7 @@ const Navigation = () => {
         style={{ display: "flex", flexDirection: "row" }}
       >
         <Nav className="mr-3">
-          <Link>Sign In</Link>
+          <Link to="/signin">Sign In</Link>
         </Nav>
         <Nav>
           <Link to="/signup">Sign Up</Link>
