@@ -21,6 +21,12 @@ const IntroSection = () => {
                 itaque veritatis temporibus iure nam. Reprehenderit est eius
                 fuga totam id!
               </p>
+              <button className="ui animated button blue" tabIndex="0">
+                <Link to="/signup">
+                  <div className="visible content">Get Started</div>
+                  <div className="hidden content">It's Free</div>
+                </Link>
+              </button>
             </div>
             <div>
               <img
