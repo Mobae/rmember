@@ -1,6 +1,6 @@
 import React from "react";
 import { Button } from "react-bootstrap";
-import Batman from "./batman.png";
+import Batman from "../batman.png";
 import { Link } from "react-router-dom";
 
 const IntroSection = () => {
