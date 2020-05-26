@@ -8,30 +8,34 @@ const IntroSection = () => {
     <div>
       <div className="main-intro" style={{ display: "inline-block" }}>
         <div className="content">
-          <h1>
-            {" "}
-            Here We Can Write Main Slogan or Something for our Application.{" "}
-          </h1>
-          <p>
-            {" "}
-            Then some Deatils for our app. Rmember's boards, lists, and cards
-            enable you to organize and prioritize your projects in a fun,
-            flexible, and rewarding way. . Lorem ipsum dolor sit amet,
-            consectetur adipisicing elit. Voluptates dolorem perferendis quaerat
-            alias facere nesciunt laudantium vero omnis tempora, itaque
-            veritatis temporibus iure nam. Reprehenderit est eius fuga totam id!
-          </p>
+          <div style={{ display: "flex", flexDirection: "row" }}>
+            <div>
+              <h1>
+                Here We Can Write Main Slogan or Something for our Application.{" "}
+              </h1>
+              <p>
+                Then some Deatils for our app. Rmember's boards, lists, and
+                cards enable you to organize and prioritize your projects in a
+                fun, flexible, and rewarding way. . Lorem ipsum dolor sit amet,
+                consectetur adipisicing elit. Voluptates dolorem perferendis
+                quaerat alias facere nesciunt laudantium vero omnis tempora,
+                itaque veritatis temporibus iure nam. Reprehenderit est eius
+                fuga totam id!
+              </p>
+            </div>
+            <div>
+              <img
+                src={Batman}
+                alt=""
+                style={{ height: "10rem", width: "10rem" }}
+              />
+            </div>
+          </div>
           <Button id="sign-up-button" variant="success">
             <Link to="/signup">Sign Up For Free</Link>
           </Button>
         </div>
-        <div className="image">
-          <img
-            src={Batman}
-            alt=""
-            style={{ height: "10rem", width: "10rem" }}
-          />
-        </div>
+        <div className="image"></div>
       </div>
       <br />
       {/* Will insert an image after every p tag  */}
