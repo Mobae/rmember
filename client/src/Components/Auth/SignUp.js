@@ -14,9 +14,11 @@ const SignUp = () => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
   const handleSubmit = (e) => {
+    const { password, passwordC } = formData;
     e.preventDefault();
     console.log(formData);
-    axios.post("http://localhost:5000/auth", formData);
+    if (password === passwordC)
+      axios.post("http://localhost:5000/auth", formData);
   };
   return (
     <Form onSubmit={(e) => handleSubmit(e)}>

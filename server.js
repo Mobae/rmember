@@ -3,6 +3,7 @@ const passport = require("passport");
 const GoogleStrategy = require("passport-google-oauth20").Strategy;
 const colors = require("colors");
 const jwt = require("jsonwebtoken");
+const cors = require("cors");
 
 const multer = require("multer");
 const upload = multer({ dest: "uploads/" });
@@ -14,6 +15,7 @@ connectDB();
 const app = express();
 app.use(express.json());
 
+app.use(cors());
 // @ROUTES
 app.use("/todo", require("./routes/todos.js"));
 app.use("/sort", require("./routes/sort.js"));
