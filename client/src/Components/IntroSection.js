@@ -6,7 +6,7 @@ import { Link } from "react-router-dom";
 const IntroSection = () => {
   return (
     <div>
-      <div className="main-intro" style={{ display: "inline-block" }}>
+      <div className="main-intro">
         <div className="content">
           <div style={{ display: "flex", flexDirection: "row" }}>
             <div>
