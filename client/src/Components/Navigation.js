@@ -10,9 +10,17 @@ const Navigation = () => {
           <Navbar.Brand>Rmember</Navbar.Brand>
         </Link>
       </div>
-      <Nav className="ml-auto">
-        <Link to="/signup">Sign Up</Link>
-      </Nav>
+      <div
+        className="ml-auto"
+        style={{ display: "flex", flexDirection: "row" }}
+      >
+        <Nav className="mr-3">
+          <Link>Sign In</Link>
+        </Nav>
+        <Nav>
+          <Link to="/signup">Sign Up</Link>
+        </Nav>
+      </div>
     </Navbar>
   );
 };
