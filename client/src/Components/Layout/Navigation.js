@@ -14,12 +14,15 @@ const Navigation = () => {
         className="ml-auto"
         style={{ display: "flex", flexDirection: "row" }}
       >
-        <Nav className="mr-3">
+        <div
+          className="ui secondary button"
+          style={{ backgroundColor: "#343a40" }}
+        >
           <Link to="/signin">Sign In</Link>
-        </Nav>
-        <Nav>
+        </div>
+        <div className="ui primary button">
           <Link to="/signup">Sign Up</Link>
-        </Nav>
+        </div>
       </div>
     </Navbar>
   );

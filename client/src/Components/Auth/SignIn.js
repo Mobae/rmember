@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Form, Col, Row, FormGroup, Button } from "react-bootstrap";
+import { Form, Col, Row, FormGroup } from "react-bootstrap";
 const SignIn = () => {
   const [formData, setFormData] = useState({
     email: "",
@@ -27,9 +27,7 @@ const SignIn = () => {
           onChange={(e) => handleChange(e)}
         />
       </FormGroup>
-      <Button id="sign-up-button" variant="success" type="submit">
-        Sign Up
-      </Button>
+      <button className="ui primary button">Sign In</button>
     </Form>
   );
 };
