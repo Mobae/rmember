@@ -93,10 +93,12 @@ const SignUp = () => {
       </div>
       <br />
       <div className="ui center aligned container">
-        <button className="ui google plus button">
-          <i className="google plus icon"></i>
-          Google
-        </button>
+        <a href="http://localhost:5000/login/auth/google">
+          <button className="ui google plus button">
+            <i className="google plus icon"></i>
+            Google
+          </button>
+        </a>
         <button className="ui facebook button">
           <i className="facebook icon"></i>
           Facebook
