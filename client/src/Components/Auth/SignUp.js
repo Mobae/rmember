@@ -13,12 +13,18 @@ const SignUp = () => {
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     const { password, passwordC } = formData;
     e.preventDefault();
     console.log(formData);
-    if (password === passwordC)
-      axios.post("http://localhost:5000/auth", formData);
+    if (password === passwordC) {
+      try {
+        const res = await axios.post("http://localhost:5000/auth", formData);
+        console.log(res);
+      } catch (err) {
+        console.log(err.response);
+      }
+    }
   };
   return (
     <Form onSubmit={(e) => handleSubmit(e)}>
