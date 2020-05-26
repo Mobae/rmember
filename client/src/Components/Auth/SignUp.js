@@ -1,6 +1,13 @@
 import React from "react";
 import { Form, Col, Row, FormGroup, Button } from "react-bootstrap";
 const SignUp = () => {
+  const [formData, setFormData] = {
+    firstName: "",
+    lastName: "",
+    email: "",
+    password1: "",
+    password2: "",
+  };
   return (
     <Form>
       <h1 style={{ marginBottom: "1em" }}>Sign Up</h1>

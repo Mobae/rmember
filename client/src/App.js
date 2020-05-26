@@ -1,7 +1,7 @@
 import React from "react";
-import Navigation from "./Components/Navigation";
-import IntroSection from "./Components/IntroSection";
-import SignUp from "./Components/SignUp";
+import Navigation from "./Components/Layout/Navigation";
+import IntroSection from "./Components/Pages/IntroSection";
+import SignUp from "./Components/Auth/SignUp";
 import { Container } from "react-bootstrap";
 import { BrowserRouter as Router, Route } from "react-router-dom";
 import "./App.css";
