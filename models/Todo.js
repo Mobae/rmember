@@ -15,6 +15,9 @@ const TodoSchema = new mongoose.Schema({
     priority: {
         type: Number
     },
+    completed: {
+        type: Boolean
+    },
     tags: [
         {
             name: {
@@ -29,7 +32,5 @@ const TodoSchema = new mongoose.Schema({
         type: Date,
         default: Date.now
     }
-
 })
-
 module.exports = mongoose.model('Todo', TodoSchema);

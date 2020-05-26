@@ -20,6 +20,7 @@ router.post(
             const desc = req.body.desc;
             const priority = req.body.priority;
             const tags = req.body.tags;
+            const completed = req.body.completed;
             const list = req.body.list;
 
             if(tags){  
@@ -46,6 +47,7 @@ router.post(
                 desc: req.body.desc,
                 priority: req.body.priority,
                 tags: req.body.tags,
+                completed: req.body.completed,
                 list: req.body.list
             };
             const newTodo = await Todo.create(payload);
