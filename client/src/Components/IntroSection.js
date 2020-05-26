@@ -1,12 +1,12 @@
 import React from "react";
 import { Button } from "react-bootstrap";
-import batman from "./batman.png";
+import Batman from "./batman.png";
 import { Link } from "react-router-dom";
 
 const IntroSection = () => {
   return (
     <div>
-      <div className="main-intro" inline>
+      <div className="main-intro" style={{ display: "inline-block" }}>
         <div className="content">
           <h1>
             {" "}
@@ -25,9 +25,12 @@ const IntroSection = () => {
             <Link to="/signup">Sign Up For Free</Link>
           </Button>
         </div>
-        {/* someone import this fucking image */}
         <div className="image">
-          <image src={batman} alt="image" />
+          <img
+            src={Batman}
+            alt=""
+            style={{ height: "10rem", width: "10rem" }}
+          />
         </div>
       </div>
       <br />
