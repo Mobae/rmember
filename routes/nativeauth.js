@@ -13,10 +13,21 @@ router.post(
     }),
   ],
   async (req, res) => {
+    const { email } = req.body;
     let errors = validationResult(req);
-    console.log(errors);
-    if (errors.length !== 0) {
+    console.log(errors.array());
+    if (!errors.isEmpty) {
+      console.log("errors exist");
       res.status(422).send({ errors: errors.array() });
+      return;
+    }
+    let user = await User.findOne({ email });
+    console.log(user);
+    if (!user) {
+      console.log("User exists");
+      const errArr = [];
+      errArr.push({ msg: "user exists" });
+      res.status(422).send({ errors: errArr });
       return;
     }
     let { password } = req.body;
