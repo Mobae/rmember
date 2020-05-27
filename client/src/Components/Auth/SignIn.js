@@ -13,7 +13,7 @@ const SignIn = () => {
     console.log(formData);
   };
   return (
-    <Form onSubmit={(e) => handleSubmit(e)}>
+    <Form onSubmit={(e) => handleSubmit(e)} style={{ marginTop: "2em" }}>
       <h1 style={{ marginBottom: "1em" }}>Sign In</h1>
       <FormGroup>
         <Form.Label>Email</Form.Label>

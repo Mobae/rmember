@@ -30,7 +30,7 @@ const SignUp = () => {
   };
   return (
     <Fragment>
-      <Form onSubmit={(e) => handleSubmit(e)}>
+      <Form onSubmit={(e) => handleSubmit(e)} style={{ marginTop: "2em" }}>
         <h1 style={{ marginBottom: "1em" }}>Sign Up</h1>
         <FormGroup>
           <Row>

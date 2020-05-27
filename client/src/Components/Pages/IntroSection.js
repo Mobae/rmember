@@ -6,7 +6,7 @@ import { Link } from "react-router-dom";
 const IntroSection = () => {
   const styles = {
     bulletPts: {
-      marginTop: "1em",
+      marginTop: "1.5em",
       fontSize: "16.5px",
     },
     bulletContainer: {
