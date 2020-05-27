@@ -20,9 +20,9 @@ const Navigation = () => {
         >
           <Link to="/signin">Sign In</Link>
         </div>
-        <div className="ui primary button">
-          <Link to="/signup">Sign Up</Link>
-        </div>
+        <Link to="/signup">
+          <div className="ui primary button">Sign Up</div>
+        </Link>
       </div>
     </Navbar>
   );

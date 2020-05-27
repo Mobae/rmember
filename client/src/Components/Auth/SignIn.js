@@ -17,11 +17,16 @@ const SignIn = () => {
       <h1 style={{ marginBottom: "1em" }}>Sign In</h1>
       <FormGroup>
         <Form.Label>Email</Form.Label>
-        <Form.Control name="email" onChange={(e) => handleChange(e)} />
+        <Form.Control
+          name="email"
+          onChange={(e) => handleChange(e)}
+          required={true}
+        />
       </FormGroup>
       <FormGroup>
         <Form.Label type="password">Password</Form.Label>
         <Form.Control
+          required={true}
           type="password"
           name="password"
           onChange={(e) => handleChange(e)}
