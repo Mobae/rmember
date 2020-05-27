@@ -1,9 +1,10 @@
 import React from "react";
-import { Button } from "react-bootstrap";
 import intro from "../intro.jpg";
 import { Link } from "react-router-dom";
 
 const IntroSection = () => {
+  const fontStyle = { fontSize: "20px", letterSpacing: "2px" };
+
   return (
     <div>
       <div className="main-intro">
@@ -11,8 +12,10 @@ const IntroSection = () => {
           <div style={{ display: "flex", flexDirection: "row" }}>
             <div>
               <h1>Rmember</h1>
-              <h4>Task Management Simplified</h4>
-              <p>
+              <h2 style={{ fontSize: "3rem", letterSpacing: "2px" }}>
+                Task Management <br /> Simplified
+              </h2>
+              <p style={{ fontSize: "1rem", letterSpacing: "1px" }}>
                 Then some Deatils for our app. Rmember's boards, lists, and
                 cards enable you to organize and prioritize your projects in a
                 fun, flexible, and rewarding way. . Lorem ipsum dolor sit amet,
@@ -23,8 +26,12 @@ const IntroSection = () => {
               </p>
               <button className="ui animated button blue" tabIndex="0">
                 <Link to="/signup">
-                  <div className="visible content">Get Started</div>
-                  <div className="hidden content">It's Free</div>
+                  <div className="visible content" style={fontStyle}>
+                    Get Started
+                  </div>
+                  <div className="hidden content" style={fontStyle}>
+                    It's Free
+                  </div>
                 </Link>
               </button>
             </div>

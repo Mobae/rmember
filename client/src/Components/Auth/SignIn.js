@@ -32,7 +32,9 @@ const SignIn = () => {
           onChange={(e) => handleChange(e)}
         />
       </FormGroup>
-      <button className="ui primary button">Sign In</button>
+      <button className="ui primary button" style={{ letterSpacing: "1px" }}>
+        Sign In
+      </button>
     </Form>
   );
 };

@@ -82,7 +82,9 @@ const SignUp = () => {
             </Col>
           </Row>
         </FormGroup>
-        <button className="ui primary button">Sign Up</button>
+        <button className="ui primary button" style={{ letterSpacing: "1px" }}>
+          Sign Up
+        </button>
       </Form>
 
       <div class="ui divider" wfd-id="65"></div>
