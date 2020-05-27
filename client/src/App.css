@@ -9,3 +9,7 @@ a:hover {
 html {
   font-size: 17px;
 }
+
+label {
+  font-size: 16px;
+}
