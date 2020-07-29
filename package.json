@@ -1,33 +1,35 @@
 {
-    "name": "google",
-    "version": "1.0.0",
-    "description": "",
-    "main": "server",
-    "scripts": {
-        "server": "nodemon server.js",
-        "start": "node server",
-        "client": "npm start --prefix client",
-        "clientinstall": "npm install --prefix client",
-        "dev": "concurrently \"npm run server\" \"npm run client\""
-    },
-    "author": "ajay",
-    "license": "ISC",
-    "dependencies": {
-        "bcryptjs": "^2.4.3",
-        "colors": "^1.4.0",
-        "cors": "^2.8.5",
-        "dependencies": "0.0.1",
-        "express": "^4.17.1",
-        "express-validator": "^6.5.0",
-        "jsonwebtoken": "^8.5.1",
-        "mongoose": "^5.9.15",
-        "multer": "^1.4.2",
-        "passport": "^0.4.1",
-        "passport-google-oauth2": "^0.2.0",
-        "passport-google-oauth20": "^2.0.0"
-    },
-    "devDependencies": {
-        "concurrently": "^5.2.0",
-        "nodemon": "^2.0.3"
-    }
+  "name": "google",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server",
+  "scripts": {
+    "server": "nodemon server.js",
+    "start": "node server",
+    "client": "npm start --prefix client",
+    "app": "npm start --prefix",
+    "clientinstall": "npm install --prefix client",
+    "landing": "concurrently \"npm run server\" \"npm run client\"",
+    "dev": "concurrently \"npm run server\" \"npm run app\""
+  },
+  "author": "ajay",
+  "license": "ISC",
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "colors": "^1.4.0",
+    "cors": "^2.8.5",
+    "dependencies": "0.0.1",
+    "express": "^4.17.1",
+    "express-validator": "^6.5.0",
+    "jsonwebtoken": "^8.5.1",
+    "mongoose": "^5.9.15",
+    "multer": "^1.4.2",
+    "passport": "^0.4.1",
+    "passport-google-oauth2": "^0.2.0",
+    "passport-google-oauth20": "^2.0.0"
+  },
+  "devDependencies": {
+    "concurrently": "^5.2.0",
+    "nodemon": "^2.0.3"
+  }
 }
