@@ -1,5 +1,4 @@
 import React from "react";
-import { Button } from "react-bootstrap";
 import intro from "../intro.jpg";
 import feature1 from "../Feature1.png";
 import feature2 from "../Feature2.png";

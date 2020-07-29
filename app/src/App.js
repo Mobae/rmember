@@ -1,7 +1,12 @@
 import React from "react";
+import SideNav from "./components/SideNav";
 
 function App() {
-  return <h1>Hello</h1>;
+  return (
+    <div>
+      <SideNav />
+    </div>
+  );
 }
 
 export default App;
