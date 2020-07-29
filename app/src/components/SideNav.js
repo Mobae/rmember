@@ -9,7 +9,7 @@ const SideNav = () => {
         <Sidenav.Body>
           <Nav>
             <Nav.Item eventKey="1" icon={<Icon icon="dashboard" />}>
-              Dashboard
+              Todos
             </Nav.Item>
             <Nav.Item eventKey="2" icon={<Icon icon="group" />}>
               User Group
