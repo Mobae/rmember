@@ -17,8 +17,10 @@ const SideNav = () => {
   };
 
   return (
-    <div className="sidenav" style={{ width: 250 }}>
-      {/* <Toggle onChange={handleToggle} checked={expanded} /> */}
+    <div
+      className="sidenav"
+      style={{ width: 250, height: "1000px", backgroundColor: "#F7F7FA" }}
+    >
       <Sidenav
         expanded={expanded}
         defaultOpenKeys={["2"]}
@@ -26,29 +28,27 @@ const SideNav = () => {
         onSelect={updateActiveKey}
       >
         <Sidenav.Body>
-          <Icon
-            icon="bars"
-            size="lg"
-            style={{ marginLeft: "20px", marginTop: "10px" }}
-            onClick={handleClick}
-          />
-
           <Nav>
             <Nav.Item
+              title="Rmember"
               eventKey="1"
-              icon={<Icon icon="bars" />}
-              // onClick={handleClick}
+              icon={<Icon icon="bars" style={{ color: "#000" }} />}
+              onClick={handleClick}
+              style={{ backgroundColor: "skyblue" }}
             >
+              <strong style={{ color: "#000" }}>Rmember</strong>
+            </Nav.Item>
+            <Nav.Item eventKey="2" icon={<Icon icon="bars" />}>
               Todos
             </Nav.Item>
-            <Dropdown eventKey="2" title="Tags" icon={<Icon icon="tags" />}>
-              <Dropdown.Item eventKey="2-1">tag1</Dropdown.Item>
-              <Dropdown.Item eventKey="2-2">tag2</Dropdown.Item>
+            <Dropdown eventKey="3" title="Tags" icon={<Icon icon="tags" />}>
+              <Dropdown.Item eventKey="3-1">tag1</Dropdown.Item>
+              <Dropdown.Item eventKey="3-2">tag2</Dropdown.Item>
             </Dropdown>
-            <Nav.Item eventKey="3" icon={<Icon icon="check" />}>
+            <Nav.Item eventKey="4" icon={<Icon icon="check" />}>
               Completed
             </Nav.Item>
-            <Nav.Item eventKey="4" icon={<Icon icon="trash" />}>
+            <Nav.Item eventKey="5" icon={<Icon icon="trash" />}>
               Trash
             </Nav.Item>
           </Nav>
