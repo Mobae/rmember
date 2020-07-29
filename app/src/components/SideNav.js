@@ -1,11 +1,21 @@
 import React from "react";
 import "rsuite/dist/styles/rsuite-default.css";
 import { Dropdown, Icon, Nav, Sidenav } from "rsuite";
+import { useState } from "react";
 
 const SideNav = () => {
+  const [activeKey, setActiveKey] = useState("1");
+  const updateActiveKey = (eventKey) => {
+    console.log("hello");
+    setActiveKey(eventKey);
+  };
   return (
     <div className="sidenav" style={{ width: 250 }}>
-      <Sidenav defaultOpenKeys={["2"]} activeKey="1">
+      <Sidenav
+        defaultOpenKeys={["2"]}
+        activeKey={activeKey}
+        onSelect={updateActiveKey}
+      >
         <Sidenav.Body>
           <Nav>
             <Nav.Item eventKey="1" icon={<Icon icon="th-list" />}>
