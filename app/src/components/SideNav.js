@@ -12,13 +12,13 @@ const SideNav = () => {
     setActiveKey(eventKey);
   };
 
-  const handleToggle = () => {
+  const handleClick = () => {
     setExpanded(!expanded);
   };
 
   return (
     <div className="sidenav" style={{ width: 250 }}>
-      <Toggle onChange={handleToggle} checked={expanded} />
+      {/* <Toggle onChange={handleToggle} checked={expanded} /> */}
       <Sidenav
         expanded={expanded}
         defaultOpenKeys={["2"]}
@@ -26,8 +26,18 @@ const SideNav = () => {
         onSelect={updateActiveKey}
       >
         <Sidenav.Body>
+          <Icon
+            icon="bars"
+            size="lg"
+            style={{ marginLeft: "20px", marginTop: "10px" }}
+          />
+
           <Nav>
-            <Nav.Item eventKey="1" icon={<Icon icon="th-list" />}>
+            <Nav.Item
+              eventKey="1"
+              icon={<Icon icon="bars" />}
+              onClick={handleClick}
+            >
               Todos
             </Nav.Item>
             <Dropdown eventKey="2" title="Tags" icon={<Icon icon="tags" />}>
