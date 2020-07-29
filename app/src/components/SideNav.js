@@ -19,15 +19,21 @@ const SideNav = () => {
   return (
     <div
       className="sidenav"
-      style={{ width: 250, height: "1000px", backgroundColor: "#F7F7FA" }}
+      style={{
+        width: 250,
+        // height: "1000px",
+        position: "sticky",
+        // backgroundColor: "#F7F7Fa",
+      }}
     >
       <Sidenav
         expanded={expanded}
         defaultOpenKeys={["2"]}
         activeKey={activeKey}
         onSelect={updateActiveKey}
+        style={{ height: "1000px" }}
       >
-        <Sidenav.Body>
+        <Sidenav.Body style={{ backgroundColor: "#F7F7FA" }}>
           <Nav>
             <Nav.Item
               title="Rmember"
