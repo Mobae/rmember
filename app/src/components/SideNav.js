@@ -30,13 +30,14 @@ const SideNav = () => {
             icon="bars"
             size="lg"
             style={{ marginLeft: "20px", marginTop: "10px" }}
+            onClick={handleClick}
           />
 
           <Nav>
             <Nav.Item
               eventKey="1"
               icon={<Icon icon="bars" />}
-              onClick={handleClick}
+              // onClick={handleClick}
             >
               Todos
             </Nav.Item>
