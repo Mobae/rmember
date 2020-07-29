@@ -44,7 +44,7 @@ const SideNav = () => {
             >
               <strong style={{ color: "#000" }}>Rmember</strong>
             </Nav.Item>
-            <Nav.Item eventKey="2" icon={<Icon icon="bars" />}>
+            <Nav.Item eventKey="2" icon={<Icon icon="list" />}>
               Todos
             </Nav.Item>
             <Dropdown eventKey="3" title="Tags" icon={<Icon icon="tags" />}>
