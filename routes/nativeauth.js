@@ -6,7 +6,7 @@ const jwt = require("jsonwebtoken");
 const { check, validationResult } = require("express-validator");
 
 router.post(
-  "/",
+  "/register",
   [
     check("email", "Please enter a valid Email").isEmail(),
     check("password", "Password must be minimum 6 characters").isLength({
@@ -58,5 +58,27 @@ router.post(
     );
   }
 );
+
+router.post("/login", async (req, res) => {
+  const { email, password } = req.body;
+  const user = await Profile.findOne({ email });
+  console.log(user, email, password);
+  if (user) {
+    const pwIsCorrect = await bcrypt.compare(password, user.password);
+    if (pwIsCorrect) {
+      payload = {
+        user: {
+          id: user.id,
+        },
+      };
+      jwt.sign(payload, "secret", (err, token) => {
+        if (err) throw err;
+        else res.json({ token });
+      });
+    } else {
+      res.status(401).send("Invalid username/password");
+    }
+  } else res.status(401).send("Invalid username/password");
+});
 
 module.exports = router;

@@ -21,7 +21,10 @@ const SignUp = () => {
     console.log(formData);
     if (password === passwordC) {
       try {
-        const res = await axios.post("http://localhost:5000/auth", formData);
+        const res = await axios.post(
+          "http://localhost:5000/auth/register",
+          formData
+        );
         console.log(res);
       } catch (err) {
         console.log(err.response);
