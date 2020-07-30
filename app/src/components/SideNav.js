@@ -22,7 +22,7 @@ const SideNav = () => {
       style={{
         width: 250,
         // height: "1000px",
-        position: "sticky",
+        position: "absolute",
         // backgroundColor: "#F7F7Fa",
       }}
     >
