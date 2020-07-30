@@ -1,7 +1,8 @@
 import React from "react";
 import "rsuite/dist/styles/rsuite-default.css";
-import { Dropdown, Icon, Nav, Sidenav, Toggle } from "rsuite";
+import { Dropdown, Icon, Nav, Sidenav } from "rsuite";
 import { useState } from "react";
+import { Link } from "react-router-dom";
 
 const SideNav = () => {
   const [activeKey, setActiveKey] = useState("1");
@@ -45,19 +46,26 @@ const SideNav = () => {
               >
                 <strong style={{ color: "#000" }}>Rmember</strong>
               </Nav.Item>
-              <Nav.Item eventKey="2" icon={<Icon icon="list" />}>
-                Todos
-              </Nav.Item>
+
+              <Link to="/todos">
+                <Nav.Item eventKey="2" icon={<Icon icon="list" />}>
+                  Todos
+                </Nav.Item>
+              </Link>
               <Dropdown eventKey="3" title="Tags" icon={<Icon icon="tags" />}>
                 <Dropdown.Item eventKey="3-1">tag1</Dropdown.Item>
                 <Dropdown.Item eventKey="3-2">tag2</Dropdown.Item>
               </Dropdown>
-              <Nav.Item eventKey="4" icon={<Icon icon="check" />}>
-                Completed
-              </Nav.Item>
-              <Nav.Item eventKey="5" icon={<Icon icon="trash" />}>
-                Trash
-              </Nav.Item>
+              <Link to="/completed">
+                <Nav.Item eventKey="4" icon={<Icon icon="check" />}>
+                  Completed
+                </Nav.Item>
+              </Link>
+              <Link to="/trash">
+                <Nav.Item eventKey="5" icon={<Icon icon="trash" />}>
+                  Trash
+                </Nav.Item>
+              </Link>
             </Nav>
           </Sidenav.Body>
         </div>
