@@ -2,6 +2,7 @@ const { Router } = require("express");
 const router = Router();
 const Profile = require("../models/Profile");
 const bcrypt = require("bcryptjs");
+const jwt = require("jsonwebtoken");
 const { check, validationResult } = require("express-validator");
 
 router.post(
@@ -39,7 +40,22 @@ router.post(
     user = new Profile({ name, email, password: newPass });
     console.log(user);
     await user.save();
-    res.send({ msg: "success" });
+    // res.send({ msg: "success" });
+    const payload = {
+      user: {
+        id: user.id,
+      },
+    };
+    jwt.sign(
+      payload,
+      "secret",
+      (err, token) => {
+        if (err) throw err;
+        console.log(token);
+        res.json({ token });
+      },
+      { expiresIn: 3600 }
+    );
   }
 );
 

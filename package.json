@@ -19,6 +19,7 @@
     "colors": "^1.4.0",
     "cors": "^2.8.5",
     "dependencies": "0.0.1",
+    "dotenv": "^8.2.0",
     "express": "^4.17.1",
     "express-validator": "^6.5.0",
     "jsonwebtoken": "^8.5.1",
