@@ -1,6 +1,6 @@
 const { Router } = require("express");
 const router = Router();
-const User = require("../models/User");
+const Profile = require("../models/Profile");
 const bcrypt = require("bcryptjs");
 const { check, validationResult } = require("express-validator");
 
@@ -13,7 +13,8 @@ router.post(
     }),
   ],
   async (req, res) => {
-    const { email } = req.body;
+    const { email, firstName, lastName } = req.body;
+    const name = firstName + " " + lastName;
     let errors = validationResult(req);
     console.log(errors.array());
     if (!errors.isEmpty) {
@@ -21,9 +22,9 @@ router.post(
       res.status(422).send({ errors: errors.array() });
       return;
     }
-    let user = await User.findOne({ email });
+    let user = await Profile.findOne({ email });
     console.log(user);
-    if (!user) {
+    if (user) {
       console.log("User exists");
       const errArr = [];
       errArr.push({ msg: "user exists" });
@@ -35,9 +36,10 @@ router.post(
     const newPass = await bcrypt.hash(password, salt);
     delete req.body.password;
     delete req.body.passwordC;
-    console.log({ ...req.body, password: newPass });
+    user = new Profile({ name, email, password: newPass });
+    console.log(user);
+    await user.save();
     res.send({ msg: "success" });
-    // await user.save();
   }
 );
 
