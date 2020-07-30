@@ -33,32 +33,34 @@ const SideNav = () => {
         onSelect={updateActiveKey}
         style={{ height: "1000px" }}
       >
-        <Sidenav.Body style={{ backgroundColor: "#F7F7FA" }}>
-          <Nav>
-            <Nav.Item
-              title="Rmember"
-              eventKey="1"
-              icon={<Icon icon="bars" style={{ color: "#000" }} />}
-              onClick={handleClick}
-              style={{ backgroundColor: "skyblue" }}
-            >
-              <strong style={{ color: "#000" }}>Rmember</strong>
-            </Nav.Item>
-            <Nav.Item eventKey="2" icon={<Icon icon="list" />}>
-              Todos
-            </Nav.Item>
-            <Dropdown eventKey="3" title="Tags" icon={<Icon icon="tags" />}>
-              <Dropdown.Item eventKey="3-1">tag1</Dropdown.Item>
-              <Dropdown.Item eventKey="3-2">tag2</Dropdown.Item>
-            </Dropdown>
-            <Nav.Item eventKey="4" icon={<Icon icon="check" />}>
-              Completed
-            </Nav.Item>
-            <Nav.Item eventKey="5" icon={<Icon icon="trash" />}>
-              Trash
-            </Nav.Item>
-          </Nav>
-        </Sidenav.Body>
+        <div style={{ position: "sticky", top: 0 }}>
+          <Sidenav.Body style={{ backgroundColor: "#F7F7FA" }}>
+            <Nav>
+              <Nav.Item
+                title="Rmember"
+                eventKey="1"
+                icon={<Icon icon="bars" style={{ color: "#000" }} />}
+                onClick={handleClick}
+                style={{ backgroundColor: "skyblue" }}
+              >
+                <strong style={{ color: "#000" }}>Rmember</strong>
+              </Nav.Item>
+              <Nav.Item eventKey="2" icon={<Icon icon="list" />}>
+                Todos
+              </Nav.Item>
+              <Dropdown eventKey="3" title="Tags" icon={<Icon icon="tags" />}>
+                <Dropdown.Item eventKey="3-1">tag1</Dropdown.Item>
+                <Dropdown.Item eventKey="3-2">tag2</Dropdown.Item>
+              </Dropdown>
+              <Nav.Item eventKey="4" icon={<Icon icon="check" />}>
+                Completed
+              </Nav.Item>
+              <Nav.Item eventKey="5" icon={<Icon icon="trash" />}>
+                Trash
+              </Nav.Item>
+            </Nav>
+          </Sidenav.Body>
+        </div>
       </Sidenav>
     </div>
   );
