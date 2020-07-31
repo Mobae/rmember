@@ -19,12 +19,12 @@ function App() {
           cum pariatur? Ut quasi id placeat explicabo optio tempora esse
           deserunt, ipsum dignissimos.
         </p> */}
-        <Switch>
-          <Route exact path="/todos" component={Todos} />
-          <Route exact path="/completed" component={Completed} />
-          <Route exact path="/trash" component={Trash} />
-        </Switch>
       </div>
+      <Switch>
+        <Route exact path="/todos" component={Todos} />
+        <Route exact path="/completed" component={Completed} />
+        <Route exact path="/trash" component={Trash} />
+      </Switch>
     </Router>
   );
 }
