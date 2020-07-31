@@ -26,7 +26,7 @@ const SideNav = () => {
           display: "flex",
         }}
       >
-        <a style={{ margin: "auto 0", marginLeft: "0.5em" }} href="#">
+        <a style={{ margin: "auto 0", marginLeft: "1.2em" }} href="#">
           <Icon
             icon="bars"
             size="2x"
