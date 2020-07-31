@@ -3,7 +3,7 @@ const passport = require("passport");
 const GoogleStrategy = require("passport-google-oauth20").Strategy;
 const colors = require("colors");
 const jwt = require("jsonwebtoken");
-const secretKey = "secretKey";
+const secretKey = "secret";
 
 const Profile = require("../models/Profile.js");
 const router = express.Router();
