@@ -15,6 +15,7 @@ router.post(
   ],
   async (req, res) => {
     const { email, firstName, lastName } = req.body;
+    console.log(email);
     const name = firstName + " " + lastName;
     let errors = validationResult(req);
     console.log(errors.array());

@@ -37,7 +37,6 @@ const LogIn = () => {
         <FormGroup>
           <ControlLabel>Email</ControlLabel>
           <FormControl name="email" type="email" />
-          <HelpBlock tooltip>Required</HelpBlock>
         </FormGroup>
         <FormGroup>
           <ControlLabel>Password</ControlLabel>

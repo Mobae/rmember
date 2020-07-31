@@ -25,8 +25,20 @@ const AuthContextProvider = (props) => {
     }
   };
 
+  const register = async (formData) => {
+    try {
+      const res = await axios.post(
+        "http://localhost:5000/auth/register",
+        formData
+      );
+      console.log(res);
+    } catch (err) {
+      console.log(err.response);
+    }
+  };
+
   return (
-    <AuthContext.Provider value={{ isLoggedIn, login }}>
+    <AuthContext.Provider value={{ isLoggedIn, login, register }}>
       {props.children}
     </AuthContext.Provider>
   );
