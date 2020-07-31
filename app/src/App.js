@@ -6,10 +6,7 @@ import Completed from "./components/routes/Completed";
 import Trash from "./components/routes/Trash";
 import LogIn from "./components/pages/LogIn";
 import SignUp from "./components/pages/SignUp";
-<<<<<<< HEAD
 import DemoModal from '/components/layouts/DemoModal';
-=======
->>>>>>> 3624930a43a6759fb58ed3726590b95a86ac8687
 
 function App() {
   return (
