@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { Form, Col, Row, FormGroup } from "react-bootstrap";
+import axios from "axios";
 const SignIn = () => {
   const [formData, setFormData] = useState({
     email: "",
@@ -8,9 +9,17 @@ const SignIn = () => {
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log(formData);
+    try {
+      const res = await axios.post(
+        "http://localhost:5000/auth/login",
+        formData
+      );
+      console.log(res);
+    } catch (err) {
+      console.log(err.response);
+    }
   };
   return (
     <Form onSubmit={(e) => handleSubmit(e)} style={{ marginTop: "2em" }}>
