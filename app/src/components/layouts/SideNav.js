@@ -3,7 +3,7 @@ import "rsuite/dist/styles/rsuite-default.css";
 import { Dropdown, Icon, Nav, Sidenav } from "rsuite";
 import { useState } from "react";
 import { Link } from "react-router-dom";
-import { AuthContext } from "../../context/AuthContext";
+import { AuthContext } from "../../context/auth/AuthContext";
 import { useContext } from "react";
 
 const SideNav = () => {
