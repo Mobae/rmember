@@ -5,6 +5,8 @@ import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import Todos from "./components/routes/Todos";
 import Completed from "./components/routes/Completed";
 import Trash from "./components/routes/Trash";
+import LogIn from "./components/pages/LogIn";
+import SignUp from "./components/pages/SignUp";
 
 function App() {
   return (
