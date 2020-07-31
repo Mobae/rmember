@@ -26,11 +26,11 @@ const SideNav = () => {
           display: "flex",
         }}
       >
-        <a>
+        <a style={{ margin: "auto 0", marginLeft: "0.5em" }} href="#">
           <Icon
             icon="bars"
             size="2x"
-            style={{ color: "#000", margin: "auto 0", marginLeft: "0.5em" }}
+            style={{ color: "#000" }}
             onClick={handleClick}
           />
         </a>
