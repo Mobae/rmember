@@ -10,12 +10,14 @@ import {
   Icon,
 } from "rsuite";
 import { useState } from "react";
-import AuthContext from "../../context/auth/AuthContext";
+import { AuthContext } from "../../context/auth/AuthContext";
 
 const LogIn = () => {
   const [formValue, setFormValue] = useState({ email: "", password: "" });
-  // const { login } = useContext(AuthContext);
-  const handleSubmit = () => console.log(formValue);
+  const { login } = useContext(AuthContext);
+  const handleSubmit = () => {
+    login(formValue);
+  };
   return (
     <div
       style={{

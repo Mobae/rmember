@@ -15,7 +15,10 @@ const AuthContextProvider = (props) => {
 
   const login = async (formData) => {
     try {
-      const res = await axios.post("http://localhost:5000/auth/login");
+      const res = await axios.post(
+        "http://localhost:5000/auth/login",
+        formData
+      );
       console.log(res);
     } catch (err) {
       console.log(err.response);
