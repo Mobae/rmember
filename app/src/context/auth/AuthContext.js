@@ -1,17 +1,19 @@
 import React, { createContext, useState } from "react";
-import {
-  REGISTER_SUCCESS,
-  REGISTER_FAIL,
-  LOGIN_FAIL,
-  LOGIN_SUCCESS,
-  LOGOUT,
-} from "../types";
+import { authTypes } from "../types";
+import authReducer from "./authReducer";
 import axios from "axios";
+import { useReducer } from "react";
 
 export const AuthContext = createContext();
 
 const AuthContextProvider = (props) => {
-  const [isLoggedIn, setIsLoggedIn] = useState(true);
+  const { LOGIN_SUCCESS } = authTypes;
+  const initialState = {
+    token: localStorage.getItem("token"),
+    isAuthenticated: false,
+    user: null,
+  };
+  const [state, dispatch] = useReducer(authReducer, initialState);
 
   const login = async (formData) => {
     try {
@@ -19,7 +21,7 @@ const AuthContextProvider = (props) => {
         "http://localhost:5000/auth/login",
         formData
       );
-      console.log(res);
+      dispatch({ type: LOGIN_SUCCESS, payload: res.data });
     } catch (err) {
       console.log(err.response);
     }
@@ -38,7 +40,7 @@ const AuthContextProvider = (props) => {
   };
 
   return (
-    <AuthContext.Provider value={{ isLoggedIn, login, register }}>
+    <AuthContext.Provider value={{ login, register }}>
       {props.children}
     </AuthContext.Provider>
   );
