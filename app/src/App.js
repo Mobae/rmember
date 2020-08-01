@@ -7,21 +7,16 @@ import Completed from "./components/routes/Completed";
 import Trash from "./components/routes/Trash";
 import LogIn from "./components/pages/LogIn";
 import SignUp from "./components/pages/SignUp";
+import AllTodo from "./components/pages/AllTodo";
 
 function App() {
   return (
     <Router>
       <div style={{ display: "flex" }}>
         {/* <TopNav /> */}
-        <SideNav />
-
-        {/* <p style={{ marginLeft: "5em" }}>
-          Lorem ipsum dolor, sit amet consectetur adipisicing elit.
-          Necessitatibus officiis velit repellat atque, alias a dolorum magnam
-          cum pariatur? Ut quasi id placeat explicabo optio tempora esse
-          deserunt, ipsum dignissimos.
-        </p> */}
+        {/* <SideNav /> */}
       </div>
+      <AllTodo />
       <Switch>
         <Route exact path="/todos" component={Todos} />
         <Route exact path="/completed" component={Completed} />
