@@ -6,7 +6,6 @@ import Completed from "./components/routes/Completed";
 import Trash from "./components/routes/Trash";
 import LogIn from "./components/pages/LogIn";
 import SignUp from "./components/pages/SignUp";
-import DemoModal from "./components/layouts/DemoModal";
 import AddTodo from "./components/layouts/AddTodo";
 
 function App() {
