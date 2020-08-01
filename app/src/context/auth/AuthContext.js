@@ -14,6 +14,7 @@ const AuthContextProvider = (props) => {
     user: null,
   };
   const [state, dispatch] = useReducer(authReducer, initialState);
+  const { isAuthenticated } = state;
 
   const loadUser = async () => {
     axios.defaults.headers["authorization"] = localStorage.getItem("token");
@@ -52,7 +53,7 @@ const AuthContextProvider = (props) => {
   };
 
   return (
-    <AuthContext.Provider value={{ login, register }}>
+    <AuthContext.Provider value={{ login, register, isAuthenticated }}>
       {props.children}
     </AuthContext.Provider>
   );

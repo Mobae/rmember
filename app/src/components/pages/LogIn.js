@@ -11,10 +11,16 @@ import {
 } from "rsuite";
 import { useState } from "react";
 import { AuthContext } from "../../context/auth/AuthContext";
+import { useEffect } from "react";
+import { withRouter, Redirect } from "react-router-dom";
+import { PromiseProvider } from "mongoose";
 
-const LogIn = () => {
+const LogIn = (props) => {
   const [formValue, setFormValue] = useState({ email: "", password: "" });
-  const { login } = useContext(AuthContext);
+  const { login, isAuthenticated } = useContext(AuthContext);
+  useEffect(() => {
+    if (isAuthenticated) props.history.push("/");
+  }, [isAuthenticated, props.history]);
   const handleSubmit = () => {
     login(formValue);
   };

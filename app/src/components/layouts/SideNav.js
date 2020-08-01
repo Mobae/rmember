@@ -61,11 +61,11 @@ const SideNav = () => {
             <div style={{ position: "sticky", top: 0 }}>
               <Sidenav.Body style={{ backgroundColor: "#F7F7FA" }}>
                 <Nav>
-                  <Link to="/todos">
-                    <Nav.Item eventKey="2" icon={<Icon icon="list" />}>
-                      Todos
-                    </Nav.Item>
-                  </Link>
+                  {/* <Link to="/todos"> */}
+                  <Nav.Item eventKey="2" icon={<Icon icon="list" />}>
+                    Todos
+                  </Nav.Item>
+                  {/* </Link> */}
                   <Dropdown
                     eventKey="3"
                     title="Tags"
@@ -74,16 +74,16 @@ const SideNav = () => {
                     <Dropdown.Item eventKey="3-1">tag1</Dropdown.Item>
                     <Dropdown.Item eventKey="3-2">tag2</Dropdown.Item>
                   </Dropdown>
-                  <Link to="/completed">
-                    <Nav.Item eventKey="4" icon={<Icon icon="check" />}>
-                      Completed
-                    </Nav.Item>
-                  </Link>
-                  <Link to="/trash">
-                    <Nav.Item eventKey="5" icon={<Icon icon="trash" />}>
-                      Trash
-                    </Nav.Item>
-                  </Link>
+                  {/* <Link to="/completed"> */}
+                  <Nav.Item eventKey="4" icon={<Icon icon="check" />}>
+                    Completed
+                  </Nav.Item>
+                  {/* </Link> */}
+                  {/* <Link to="/trash"> */}
+                  <Nav.Item eventKey="5" icon={<Icon icon="trash" />}>
+                    Trash
+                  </Nav.Item>
+                  {/* </Link> */}
                 </Nav>
               </Sidenav.Body>
             </div>
