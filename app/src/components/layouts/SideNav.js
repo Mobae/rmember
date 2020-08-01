@@ -49,11 +49,16 @@ const SideNav = () => {
         }}
       >
         <Sidenav
-          expanded={expanded}
+          expanded={!expanded}
           defaultOpenKeys={["2"]}
           activeKey={activeKey}
           onSelect={updateActiveKey}
-          style={{ height: "1000px" }}
+          style={{
+            height: "1000px",
+            position: "fixed",
+            zIndex: 1,
+            maxWidth: "200px",
+          }}
         >
           <div style={{ position: "sticky", top: 0 }}>
             <Sidenav.Body style={{ backgroundColor: "#F7F7FA" }}>
