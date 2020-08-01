@@ -17,7 +17,7 @@ function App() {
           <SideNav />
         </div>
         <Switch>
-          <Route exact path="/todos" component={Todos} />
+          <Route exact path="/" component={Todos} />
           <Route exact path="/completed" component={Completed} />
           <Route exact path="/trash" component={Trash} />
           <Route exact path="/login" component={LogIn} />

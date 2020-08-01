@@ -5,12 +5,12 @@ import { useState } from "react";
 import { Link } from "react-router-dom";
 import { AuthContext } from "../../context/auth/AuthContext";
 import { useContext } from "react";
+import { useEffect } from "react";
 
 const SideNav = () => {
   const [activeKey, setActiveKey] = useState("1");
   const [expanded, setExpanded] = useState(true);
-  const { isLoggedIn } = useContext(AuthContext);
-
+  const { isAuthenticated } = useContext(AuthContext);
   const updateActiveKey = (eventKey) => {
     console.log("hello");
     setActiveKey(eventKey);
@@ -42,7 +42,7 @@ const SideNav = () => {
           Rmember
         </strong>
       </div>
-      {isLoggedIn ? (
+      {isAuthenticated ? (
         <div
           className="sidenav"
           style={{
