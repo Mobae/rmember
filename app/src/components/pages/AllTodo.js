@@ -3,7 +3,7 @@ import "./AllTodo.css";
 import { Button, Modal } from "rsuite";
 
 const TodoCard = (serial, priority) => {
-  const [backdrop, setBackdrop] = useState(true);
+  const backdrop = true;
   const [show, setShow] = useState(false);
 
   const close = () => {
@@ -40,7 +40,7 @@ const TodoCard = (serial, priority) => {
             <Modal.Title>{priority}</Modal.Title>
           </Modal.Header>
           <Modal.Body>
-            <h1 style={{ fontSize: "10px" }}>
+            <h1 style={{ fontSize: "10px", lineHeight: "20px" }}>
               Lorem ipsum dolor sit amet consectetur adipisicing elit. Ut,
               laboriosam praesentium hic atque vero velit accusantium aliquid ex
               iusto aut, maiores illo modi dolores quasi et! Repellat nobis
