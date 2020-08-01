@@ -19,7 +19,6 @@ const SignUp = () => {
     password: "",
   });
   const { register } = useContext(AuthContext);
-  console.log(register);
   const handleSubmit = () => {
     register(formValue);
   };

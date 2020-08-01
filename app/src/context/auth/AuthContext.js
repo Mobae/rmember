@@ -7,7 +7,7 @@ import { useReducer } from "react";
 export const AuthContext = createContext();
 
 const AuthContextProvider = (props) => {
-  const { LOGIN_SUCCESS, USER_LOAD } = authTypes;
+  const { LOGIN_SUCCESS, USER_LOAD, REGISTER_SUCCESS } = authTypes;
   const initialState = {
     token: localStorage.getItem("token"),
     isAuthenticated: false,
@@ -44,7 +44,8 @@ const AuthContextProvider = (props) => {
         "http://localhost:5000/auth/register",
         formData
       );
-      console.log(res);
+      dispatch({ type: REGISTER_SUCCESS, payload: res.data });
+      loadUser();
     } catch (err) {
       console.log(err.response);
     }
