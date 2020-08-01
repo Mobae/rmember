@@ -4,7 +4,17 @@ const Profile = require("../models/Profile");
 const bcrypt = require("bcryptjs");
 const jwt = require("jsonwebtoken");
 const { check, validationResult } = require("express-validator");
+const auth = require("../middleware/auth");
+const { remove } = require("../models/Profile");
 
+// get user
+router.get("/get", auth, async (req, res) => {
+  const { id } = req.user;
+  let user = await Profile.findById(id, { password: 0 });
+  res.send(user);
+});
+
+// register user
 router.post(
   "/register",
   [
@@ -15,6 +25,7 @@ router.post(
   ],
   async (req, res) => {
     const { email, firstName, lastName } = req.body;
+    console.log(email);
     const name = firstName + " " + lastName;
     let errors = validationResult(req);
     console.log(errors.array());
@@ -40,7 +51,6 @@ router.post(
     user = new Profile({ name, email, password: newPass });
     console.log(user);
     await user.save();
-    // res.send({ msg: "success" });
     const payload = {
       user: {
         id: user.id,
@@ -59,6 +69,7 @@ router.post(
   }
 );
 
+// login user
 router.post("/login", async (req, res) => {
   const { email, password } = req.body;
   const user = await Profile.findOne({ email });

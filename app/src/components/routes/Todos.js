@@ -1,10 +1,12 @@
 import React from "react";
-import AllTodo from "../pages/AllTodo";
+// import AllTodo from "../pages/AllTodo";
 
 const Todos = () => {
   return (
     <div>
-      <AllTodo />
+      <p>This Is The Todos Page</p>
+      <p>Testing Purpose</p>
+      {/* <AllTodo /> */}
     </div>
   );
 };

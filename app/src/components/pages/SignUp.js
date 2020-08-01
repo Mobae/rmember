@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useContext } from "react";
 import {
   Form,
   FormGroup,
@@ -9,10 +9,20 @@ import {
   Button,
   FlexboxGrid,
 } from "rsuite";
+import { AuthContext } from "../../context/auth/AuthContext";
 
 const SignUp = () => {
+  const [formValue, setFormValue] = useState({
+    email: "",
+    firstName: "",
+    lastName: "",
+    password: "",
+  });
+  const { register } = useContext(AuthContext);
+  const handleSubmit = () => {
+    register(formValue);
+  };
   return (
-    // <div style = {{paddingTop:"150px", paddingLeft: "200px"}}>
     <div
       style={{
         margin: "0 auto",
@@ -20,21 +30,25 @@ const SignUp = () => {
         marginTop: "100px",
       }}
     >
-      <Form fluid>
-        <div style={{ flexWrap: "wrap" }}>
-          <FormGroup>
-            <ControlLabel>FirstName</ControlLabel>
-            <FormControl name="name" />
-          </FormGroup>
-          <FormGroup>
-            <ControlLabel>LastName</ControlLabel>
-            <FormControl name="name" />
-          </FormGroup>
-        </div>
+      <Form
+        fluid
+        formValue={formValue}
+        onChange={(formValue) => {
+          setFormValue(formValue);
+        }}
+      >
+        <FormGroup>
+          <ControlLabel>First Name</ControlLabel>
+          <FormControl name="firstName" />
+        </FormGroup>
+        <FormGroup>
+          <ControlLabel>Last Name</ControlLabel>
+          <FormControl name="lastName" />
+        </FormGroup>
+
         <FormGroup>
           <ControlLabel>Email</ControlLabel>
           <FormControl name="email" type="email" />
-          <HelpBlock>Required</HelpBlock>
         </FormGroup>
         <FormGroup>
           <ControlLabel>Password</ControlLabel>
@@ -42,8 +56,9 @@ const SignUp = () => {
         </FormGroup>
         <FormGroup>
           <ButtonToolbar>
-            <Button appearance="primary">Submit</Button>
-            <Button appearance="default">Cancel</Button>
+            <Button appearance="primary" onClick={handleSubmit}>
+              Submit
+            </Button>
           </ButtonToolbar>
         </FormGroup>
       </Form>

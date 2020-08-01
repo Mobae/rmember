@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useContext } from "react";
 import {
   Form,
   FormGroup,
@@ -9,8 +9,21 @@ import {
   Button,
   Icon,
 } from "rsuite";
+import { useState } from "react";
+import { AuthContext } from "../../context/auth/AuthContext";
+import { useEffect } from "react";
+import { withRouter, Redirect } from "react-router-dom";
+import { PromiseProvider } from "mongoose";
 
-const LogIn = () => {
+const LogIn = (props) => {
+  const [formValue, setFormValue] = useState({ email: "", password: "" });
+  const { login, isAuthenticated } = useContext(AuthContext);
+  useEffect(() => {
+    if (isAuthenticated) props.history.push("/");
+  }, [isAuthenticated, props.history]);
+  const handleSubmit = () => {
+    login(formValue);
+  };
   return (
     <div
       style={{
@@ -20,11 +33,16 @@ const LogIn = () => {
         justifyContent: "center",
       }}
     >
-      <Form layout="horizontal">
+      <Form
+        layout="horizontal"
+        onChange={(formValue) => {
+          setFormValue(formValue);
+        }}
+        formValue={formValue}
+      >
         <FormGroup>
           <ControlLabel>Email</ControlLabel>
           <FormControl name="email" type="email" />
-          <HelpBlock tooltip>Required</HelpBlock>
         </FormGroup>
         <FormGroup>
           <ControlLabel>Password</ControlLabel>
@@ -32,7 +50,9 @@ const LogIn = () => {
         </FormGroup>
         <FormGroup>
           <ButtonToolbar>
-            <Button appearance="primary">Submit</Button>
+            <Button appearance="primary" onClick={handleSubmit}>
+              Submit
+            </Button>
           </ButtonToolbar>
         </FormGroup>
         <hr></hr>
