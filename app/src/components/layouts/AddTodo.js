@@ -46,7 +46,7 @@ const AddTodo = () => {
   return (
     <div
       className="modal-container"
-      style={{ position: "fixed", top: 650, right: 80 }}
+      style={{ position: "fixed", top: 700, right: 80 }}
     >
       <Modal
         overflow={true}
