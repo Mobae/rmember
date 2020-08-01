@@ -35,7 +35,6 @@ router.post(
       return;
     }
     let user = await Profile.findOne({ email });
-    console.log(user);
     if (user) {
       console.log("User exists");
       const errArr = [];
@@ -73,7 +72,7 @@ router.post(
 router.post("/login", async (req, res) => {
   const { email, password } = req.body;
   const user = await Profile.findOne({ email });
-  console.log(user, email, password);
+  console.log(user);
   if (user) {
     const pwIsCorrect = await bcrypt.compare(password, user.password);
     if (pwIsCorrect) {
