@@ -1,6 +1,5 @@
 import React from "react";
 import SideNav from "./components/layouts/SideNav";
-// import TopNav from "./components/layouts/TopNav";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import Todos from "./components/routes/Todos";
 import Completed from "./components/routes/Completed";
@@ -13,8 +12,7 @@ function App() {
   return (
     <Router>
       <div style={{ display: "flex" }}>
-        {/* <TopNav /> */}
-        {/* <SideNav /> */}
+        <SideNav />
       </div>
       <AllTodo />
       <Switch>
