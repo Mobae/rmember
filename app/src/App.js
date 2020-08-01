@@ -14,9 +14,9 @@ function App() {
     <Router>
       <div style={{ display: "flex" }}>
         <SideNav />
-        <AddTodo />
       </div>
       <AllTodo />
+      <AddTodo />
       <Switch>
         <Route exact path="/todos" component={Todos} />
         <Route exact path="/completed" component={Completed} />
