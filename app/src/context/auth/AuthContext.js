@@ -15,6 +15,16 @@ const AuthContextProvider = (props) => {
   };
   const [state, dispatch] = useReducer(authReducer, initialState);
 
+  const loadUser = async () => {
+    axios.defaults.headers["authorization"] = localStorage.getItem("token");
+    try {
+      const res = await axios.get("http://localhost:5000/auth/get");
+      console.log(res);
+    } catch (err) {
+      console.log(err.response);
+    }
+  };
+
   const login = async (formData) => {
     try {
       const res = await axios.post(
@@ -22,6 +32,7 @@ const AuthContextProvider = (props) => {
         formData
       );
       dispatch({ type: LOGIN_SUCCESS, payload: res.data });
+      loadUser();
     } catch (err) {
       console.log(err.response);
     }
