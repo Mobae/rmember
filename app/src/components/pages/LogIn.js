@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useContext } from "react";
 import {
   Form,
   FormGroup,
@@ -9,8 +9,15 @@ import {
   Button,
   Icon,
 } from "rsuite";
+import { useState } from "react";
+import { AuthContext } from "../../context/auth/AuthContext";
 
 const LogIn = () => {
+  const [formValue, setFormValue] = useState({ email: "", password: "" });
+  const { login } = useContext(AuthContext);
+  const handleSubmit = () => {
+    login(formValue);
+  };
   return (
     <div
       style={{
@@ -20,11 +27,16 @@ const LogIn = () => {
         justifyContent: "center",
       }}
     >
-      <Form layout="horizontal">
+      <Form
+        layout="horizontal"
+        onChange={(formValue) => {
+          setFormValue(formValue);
+        }}
+        formValue={formValue}
+      >
         <FormGroup>
           <ControlLabel>Email</ControlLabel>
           <FormControl name="email" type="email" />
-          <HelpBlock tooltip>Required</HelpBlock>
         </FormGroup>
         <FormGroup>
           <ControlLabel>Password</ControlLabel>
@@ -32,7 +44,9 @@ const LogIn = () => {
         </FormGroup>
         <FormGroup>
           <ButtonToolbar>
-            <Button appearance="primary">Submit</Button>
+            <Button appearance="primary" onClick={handleSubmit}>
+              Submit
+            </Button>
           </ButtonToolbar>
         </FormGroup>
         <hr></hr>
