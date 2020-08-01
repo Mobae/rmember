@@ -15,6 +15,7 @@ function App() {
         <SideNav />
         <AddTodo />
       </div>
+      <AllTodo />
       <Switch>
         <Route exact path="/todos" component={Todos} />
         <Route exact path="/completed" component={Completed} />
