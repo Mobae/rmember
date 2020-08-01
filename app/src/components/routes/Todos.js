@@ -1,6 +1,7 @@
 import React, { useContext } from "react";
 import { AuthContext } from "../../context/auth/AuthContext";
 import { Redirect } from "react-router-dom";
+import AllTodo from "../pages/AllTodo";
 
 const Todos = () => {
   const { isAuthenticated } = useContext(AuthContext);
@@ -10,9 +11,7 @@ const Todos = () => {
   } else {
     return (
       <div>
-        <p>This Is The Todos Page</p>
-        <p>Testing Purpose</p>
-        {/* <AllTodo /> */}
+        <AllTodo />
       </div>
     );
   }

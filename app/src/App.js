@@ -8,7 +8,7 @@ import LogIn from "./components/pages/LogIn";
 import SignUp from "./components/pages/SignUp";
 import AddTodo from "./components/layouts/AddTodo";
 import AuthContextProvider from "./context/auth/AuthContext";
-import AllTodo from "./components/pages/AllTodo";
+// import AllTodo from "./components/pages/AllTodo";
 
 function App() {
   return (
@@ -16,8 +16,8 @@ function App() {
       <Router>
         <div style={{ display: "flex" }}>
           <SideNav />
-          {/* <AddTodo /> */}
         </div>
+        <AddTodo />
         {/* <AllTodo /> */}
         <Switch>
           <Route exact path="/" component={Todos} />
