@@ -1,5 +1,6 @@
 import { authTypes } from "../../context/types";
 const {
+  USER_LOAD,
   REGISTER_SUCCESS,
   REGISTER_FAIL,
   LOGIN_FAIL,
@@ -9,9 +10,10 @@ const {
 
 export default (state, action) => {
   switch (action.type) {
+    case USER_LOAD:
+      return { ...state, isAuthenticate: true, user: action.payload };
     case LOGIN_SUCCESS:
       localStorage.setItem("token", "bearer " + action.payload.token);
-      console.log(action.payload.token);
       return { ...state, isAuthenticated: true };
   }
 };

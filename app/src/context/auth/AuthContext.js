@@ -7,7 +7,7 @@ import { useReducer } from "react";
 export const AuthContext = createContext();
 
 const AuthContextProvider = (props) => {
-  const { LOGIN_SUCCESS } = authTypes;
+  const { LOGIN_SUCCESS, USER_LOAD } = authTypes;
   const initialState = {
     token: localStorage.getItem("token"),
     isAuthenticated: false,
@@ -19,7 +19,7 @@ const AuthContextProvider = (props) => {
     axios.defaults.headers["authorization"] = localStorage.getItem("token");
     try {
       const res = await axios.get("http://localhost:5000/auth/get");
-      console.log(res);
+      dispatch({ type: USER_LOAD, payload: res.data });
     } catch (err) {
       console.log(err.response);
     }
