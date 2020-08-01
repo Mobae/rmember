@@ -26,7 +26,7 @@ const DemoModal = () => {
   
         <Modal overflow={overflow} show={show} onHide={() => setShow(false)}>
           <Modal.Header>
-            <Modal.Title>Take the jerk out ... </Modal.Title> <p style={{display: 'flex'}}> Aug 4 2020</p>
+            <Modal.Title>Take the jerk out ... </Modal.Title>
           </Modal.Header>
           <Modal.Body>
             <p>Hello</p>

@@ -2,6 +2,7 @@ import React from "react";
 import AuthContext from "../../context/auth/AuthContext";
 import { Redirect } from "react-router-dom";
 
+
 const Todos = () => {
   const { isAuthenticated } = AuthContext;
   if (!isAuthenticated) {
@@ -11,6 +12,7 @@ const Todos = () => {
     <div>
       <p>This Is The Todos Page</p>
       <p>Testing Purpose</p>
+      {/* <AllTodo /> */}
     </div>
   );
 };
