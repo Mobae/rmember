@@ -15,7 +15,7 @@
   margin-top: 5px;
 }
 
-.card .card-header {
+.card .circle {
   position: relative;
   width: 100%;
   height: 100%;
@@ -25,26 +25,50 @@
   border-radius: 5px;
 }
 
-.card .card-header h2 {
+.card .circle h2 {
   color: #fff;
   font-size: 2.5em;
-  padding: 10px 0;
+  /* padding: 10px 0; */
 }
 
-.card .card-main-info {
+.card .circle span {
+  color: #fff;
+}
+
+.card .content {
   position: absolute;
   bottom: 10px;
   padding: 10px;
   text-align: center;
 }
 
-.card .card-main-info p {
+.card .content p {
   color: #666;
   font-size: 10px;
 }
 
-.card .card-main-info .read-more-button {
+.card .content .read-more-button {
   background-color: #000;
   color: white;
   margin-top: 12px;
+}
+
+.card:nth-child(1) .circle,
+.card:nth-child(1) .content .read-more-button {
+  background: #ffaf00;
+}
+
+.card:nth-child(2) .circle,
+.card:nth-child(2) .content .read-more-button {
+  background: #da2268;
+}
+
+.card:nth-child(3) .circle,
+.card:nth-child(3) .content .read-more-button {
+  background: #bb02ff;
+}
+
+.card:nth-child(4) .circle,
+.card:nth-child(4) .content .read-more-button {
+  background: green;
 }
