@@ -8,25 +8,28 @@ import LogIn from "./components/pages/LogIn";
 import SignUp from "./components/pages/SignUp";
 import AddTodo from "./components/layouts/AddTodo";
 import AuthContextProvider from "./context/auth/AuthContext";
+import TodoContextProvider from "./context/todos/TodoContext";
 // import AllTodo from "./components/pages/AllTodo";
 
 function App() {
   return (
     <AuthContextProvider>
-      <Router>
-        <div style={{ display: "flex" }}>
-          <SideNav />
-        </div>
-        <AddTodo />
-        {/* <AllTodo /> */}
-        <Switch>
-          <Route exact path="/" component={Todos} />
-          <Route exact path="/completed" component={Completed} />
-          <Route exact path="/trash" component={Trash} />
-          <Route exact path="/login" component={LogIn} />
-          <Route exact path="/signup" component={SignUp} />
-        </Switch>
-      </Router>
+      <TodoContextProvider>
+        <Router>
+          <div style={{ display: "flex" }}>
+            <SideNav />
+          </div>
+          <AddTodo />
+          {/* <AllTodo /> */}
+          <Switch>
+            <Route exact path="/" component={Todos} />
+            <Route exact path="/completed" component={Completed} />
+            <Route exact path="/trash" component={Trash} />
+            <Route exact path="/login" component={LogIn} />
+            <Route exact path="/signup" component={SignUp} />
+          </Switch>
+        </Router>
+      </TodoContextProvider>
     </AuthContextProvider>
   );
 }

@@ -1,5 +1,6 @@
-import React, { useState } from "react";
+import React, { useState, useEffect, useContext } from "react";
 import "./AllTodo.css";
+import { TodoContext } from "../../context/todos/TodoContext";
 import { Button, Modal } from "rsuite";
 
 const TodoCard = (serial, priority) => {
@@ -62,6 +63,10 @@ const TodoCard = (serial, priority) => {
 };
 
 const AllTodo = () => {
+  const { getTodos } = useContext(TodoContext);
+  useEffect(() => {
+    getTodos();
+  }, []);
   return (
     <div className="container" style={{ marginTop: "50px" }}>
       {TodoCard(1, "Important")}
