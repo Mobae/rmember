@@ -26,6 +26,9 @@ const SideNav = () => {
           width: "100%",
           backgroundColor: "skyblue",
           display: "flex",
+          position: "fixed",
+          top: 0,
+          zIndex: 2,
         }}
       >
         <a style={{ margin: "auto 0", marginLeft: "1.2em" }} href="#">
@@ -63,7 +66,7 @@ const SideNav = () => {
               maxWidth: "200px",
             }}
           >
-            <div style={{ position: "sticky", top: 0 }}>
+            <div style={{ position: "sticky", top: "50px" }}>
               <Sidenav.Body style={{ backgroundColor: "#F7F7FA" }}>
                 <Nav>
                   {/* <Link to="/todos"> */}
