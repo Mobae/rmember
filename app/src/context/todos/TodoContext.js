@@ -8,22 +8,30 @@ export const TodoContext = createContext();
 const TodoContextProvider = (props) => {
   const initialState = {
     todos: [],
+    tags: [],
   };
   const [state, dispatch] = useReducer(todoReducer, initialState);
-  const { GET_TODO } = todoTypes;
-  const { todos } = state;
+  const { GET_TODO, GET_TAG } = todoTypes;
+  const { todos, tags } = state;
 
   const getTodos = async () => {
     const res = await axios.get("http://localhost:5000/todo");
-    console.log(res);
     dispatch({
       type: GET_TODO,
       payload: res.data.data,
     });
   };
 
+  const getTags = async () => {
+    const res = await axios.get("http://localhost:5000/tag");
+    dispatch({
+      type: GET_TAG,
+      payload: res.data.data,
+    });
+  };
+
   return (
-    <TodoContext.Provider value={{ getTodos, todos }}>
+    <TodoContext.Provider value={{ getTodos, getTags, todos, tags }}>
       {props.children}
     </TodoContext.Provider>
   );

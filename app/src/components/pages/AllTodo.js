@@ -60,9 +60,10 @@ const TodoCard = (props) => {
 };
 
 const AllTodo = () => {
-  const { getTodos, todos } = useContext(TodoContext);
+  const { getTodos, getTags, todos } = useContext(TodoContext);
   useEffect(() => {
     getTodos();
+    getTags();
   }, []);
   return (
     <div className="container" style={{ marginTop: "50px" }}>

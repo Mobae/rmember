@@ -9,4 +9,5 @@ export const authTypes = {
 
 export const todoTypes = {
   GET_TODO: "GET_TODO",
+  GET_TAG: "GET_TAG",
 };
