@@ -53,6 +53,7 @@ const AddTodo = () => {
         show={show}
         onHide={() => setShow(false)}
         size="xs"
+        style={{ width: "100%" }}
       >
         <Modal.Header>
           <Modal.Title>Add new todo</Modal.Title>

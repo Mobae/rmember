@@ -6,3 +6,7 @@ export const authTypes = {
   LOGOUT: "LOGOUT",
   USER_LOAD: "USER_LOAD",
 };
+
+export const todoTypes = {
+  GET_TODO: "GET_TODO",
+};

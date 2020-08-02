@@ -1,11 +1,13 @@
-import React, { useState, useEffect, useContext } from "react";
+import React, { useState, useEffect, useContext, useReducer } from "react";
 import "./AllTodo.css";
 import { TodoContext } from "../../context/todos/TodoContext";
 import { Button, Modal } from "rsuite";
+// import { TodoContext } from "../../context/todos/TodoContext";
 
-const TodoCard = (serial, priority) => {
+const TodoCard = (props) => {
   const backdrop = true;
   const [show, setShow] = useState(false);
+  const { serial, priority, desc, todo } = props;
 
   const close = () => {
     setShow(false);
@@ -18,16 +20,11 @@ const TodoCard = (serial, priority) => {
   return (
     <div className="card">
       <div className="circle">
-        <span>{priority}</span>
+        <span>{todo}</span>
         {serial > 9 ? <h2>{serial}</h2> : <h2>0{serial}</h2>}
       </div>
       <div className="content">
-        <p>
-          Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quibusdam
-          labore tempore eaque in reprehenderit nostrum id, eos cum quidem fugit
-          suscipit atque impedit adipisci consequatur nobis, consectetur animi
-          nulla corrupti!
-        </p>
+        <p>{desc}</p>
         <Button size="xs" className="read-more-button" onClick={open}>
           Read More
         </Button>
@@ -63,13 +60,16 @@ const TodoCard = (serial, priority) => {
 };
 
 const AllTodo = () => {
-  const { getTodos } = useContext(TodoContext);
+  const { getTodos, todos } = useContext(TodoContext);
   useEffect(() => {
     getTodos();
   }, []);
   return (
     <div className="container" style={{ marginTop: "50px" }}>
-      {TodoCard(1, "Important")}
+      {todos.map((todo) => (
+        <TodoCard serial="1" priority="Imp" desc={todo.desc} todo={todo.todo} />
+      ))}
+      {/* {TodoCard(1, "Important")} */}
     </div>
   );
 };
