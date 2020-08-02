@@ -26,6 +26,9 @@ const SideNav = () => {
           width: "100%",
           backgroundColor: "skyblue",
           display: "flex",
+          position: "fixed",
+          top: 0,
+          zIndex: 2,
         }}
       >
         <a style={{ margin: "auto 0", marginLeft: "1.2em" }} href="#">

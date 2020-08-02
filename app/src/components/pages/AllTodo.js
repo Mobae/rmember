@@ -63,7 +63,7 @@ const TodoCard = (serial, priority) => {
 
 const AllTodo = () => {
   return (
-    <div className="container">
+    <div className="container" style={{ marginTop: "50px" }}>
       {TodoCard(1, "Important")}
       {TodoCard(2, "Kinda_Imp")}
       {TodoCard(3, "Just Do It")}
