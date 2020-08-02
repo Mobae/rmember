@@ -62,16 +62,7 @@ const TodoCard = (serial, priority) => {
 };
 
 const AllTodo = () => {
-  return (
-    <div className="container" style={{ marginTop: "50px" }}>
-      {TodoCard(1, "Important")}
-      {TodoCard(2, "Kinda_Imp")}
-      {TodoCard(3, "Just Do It")}
-      {TodoCard(4, "Meh")}
-      {TodoCard(5, "Meh")}
-      {TodoCard(6, "Meh")}
-    </div>
-  );
+  return <div className="container">{TodoCard(1, "Important")}</div>;
 };
 
 export default AllTodo;
