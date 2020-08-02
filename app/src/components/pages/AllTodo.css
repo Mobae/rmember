@@ -53,23 +53,3 @@
   color: white;
   margin-top: 12px;
 }
-
-.card:nth-child(1) .circle,
-.card:nth-child(1) .content .read-more-button {
-  background: #ffaf00;
-}
-
-.card:nth-child(2) .circle,
-.card:nth-child(2) .content .read-more-button {
-  background: #da2268;
-}
-
-.card:nth-child(3) .circle,
-.card:nth-child(3) .content .read-more-button {
-  background: #bb02ff;
-}
-
-.card:nth-child(4) .circle,
-.card:nth-child(4) .content .read-more-button {
-  background: green;
-}

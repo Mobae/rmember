@@ -46,7 +46,7 @@ const AddTodo = () => {
   return (
     <div
       className="modal-container"
-      style={{ position: "fixed", top: 700, right: 80 }}
+      style={{ position: "fixed", top: 600, right: 100 }}
     >
       <Modal
         overflow={true}
@@ -136,7 +136,7 @@ const AddTodo = () => {
           borderRadius: "50%",
           boxShadow: "3px 3px #888888",
           position: "absolute",
-          zIndex: "2",
+          zIndex: "1",
         }}
       >
         <Icon icon="plus" size="3x" />
